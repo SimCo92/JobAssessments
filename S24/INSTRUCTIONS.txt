@@ -1,0 +1,17 @@
+Ciao,
+
+ti chiedo di mettere le mani su un dataset molto semplice. E' un sample di un paio di migliaia di righe. Ti chiedi di mandarmi il codice che farò girare su un dataset molto più ampio. Puoi scegliere uno degli spunti che ti do o  sceglierne uno tu liberamente. Importante è avere un jupyter notebook che mi consenta di analizzare un qualsiasi dataset con questo formato. Ti chiedo di commentare profusamente il codice. Se hai bisogno di più tempo prenditi pure un paio d'ore, quindi mi aspetto per le 9 il notebook e possibilmente una versione in PDF dello stesso.
+
+I campi sono:
+user ID --> identificativo utente
+pv --> provincia
+GDO --> identificativo insegna (0 è non partner, gli altri sono in partnership)
+month --> mese dell'osservazione
+ordini --> numero totale di ordini per quel mese di quell'utente in quella insegna
+Alcuni spunti:
+misurare la fedeltà degli utenti ad una insegna, la posso rappresentare in qualche modo per farla cogliere a colpo d'occhio ad un executive?
+soglia di ordini per utente oltre la quale il rischio di churn diminuisce
+quando lancio una insegna su una piazza, gli ordini sono incrementali o cannibalizzano le quote di altri?
+l'infedeltà nei confronti di una insegna è spiegata meglio dalla provincia, dall'insegna o dal periodo? Ci sono altri fattori?
+
+grazie mille

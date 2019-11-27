@@ -1,0 +1,99 @@
+Swiss Re - Data Engineer technical assignment
+
+If you need, you can make assumptions (report all of them in the solutions you submit).
+
+
+Exercise 1:
+Consider the following relationship schema (primary keys are underlined):
+Book( title, price, pages, editor )
+Contract( author, title, perc_royalty ) —— title is FK to Book.title
+YearRecap(title, year, copies) —— title is FK to Book.title
+Formulate using SQL the following:
+- how many copies have been sold for each book?
+- what are the book titles that have sold less copies?
+- which books have sold at least 1000 copies in a year in which the author has at least 5% of
+royalty?
+- what are the books that have never been sold? If a book was not sold in a certain year, there is
+no record for that book in YearRecap
+
+
+Exercise 2:
+Consider the following relationship schema (primary keys are underlined):
+Client(telephone_number, name, address)
+Order(telephone_number, pizza_code,
+operator_code, date, quantity, cost) ——telephone_number is FK to Client.telephone_number
+——pizza_code is FK to Pizza.pizza_code
+Pizza(pizza_code, name, price)
+Formulate using SQL the following:
+- what is the total cost of the orders for each client?
+- What are the names of the clients that have ordered pizzas to just one operator?
+- What are the telephone numbers of the clients that have ordered both pizza Margherita and
+pizza Marinara?
+- What are the telephone numbers and the name of the clients that haven’t ordered pizzas in
+January 2003?
+
+
+Exercise 3:
+We would like to build up a new e-commerce website to sell bikes with an estimate workload of
+100K active users every hour. Our requirements are:
+- Users can create new accounts using personal information (name, surname, age, email,
+address and so on..). The users can set up shipping information for many locations
+- Keep track of the availability of bikes in the warehouse
+- Keep track the orders of the customers
+- The analytics team needs to have access to all the information available to make some
+analysis, create models and so on.
+Please provide the following documents:
+1) Using the services and the technologies of a cloud provider (Azure preferred, otherwise
+Amazon), describe in words and/or diagrams the architecture you would use to manage
+orders and retrieve information quickly and efficiently for the customer. Describe also how the
+analytics team will access the data (in terms of technologies and tools also). If you don’t have
+any experience with any cloud provider, you are free to propose your alternative using other
+technologies/tools/services.
+2) Using a relational approach, provide the entity relationship model and the relational schema of
+the database you would design (this don’t mean that you have to use a relational database in
+the previous point, you are free to propose your solution).
+
+
+Exercise 4:
+Implement in python language a solution for the following problem:
+You are given a list of length 2 <= S <= 1000 that contains only 1 and 0 (basically, it contains bits).
+You can only perform one kind of operation on that list: you can only flip 2 <= K <= S consecutive
+bits at a time (the flip of K consecutive bits it’s an operation); your goal is to find the minimum
+number of operations needed to transform that list so that it contains all zeros or all ones.
+For this task you are given also some input cases (look at the file ‘ex3.txt’): each line of that file
+contains the list of bits and the integer K (separated by a space). On a file named ‘ex3.out’, put on
+the n-th row the solution for the n-th test in the file ‘files/ex3.txt’ that is:
+1) The minimum number of operations needed to transform the list according to the specifications
+upon
+2) “NOT POSSIBLE” if there is no solution for the case
+Provide us all the code you write and the file ‘ex3.out’ you generate. What is the time complexity
+of your algorithm?
+Few examples:
+1) If the case is
+‘00010110 3’
+It mean that S = 8, K = 3, and the list of bits is [0,0,0,1,0,1,1,0].
+Using the following 3 operations:
+1) Flip from index 4 to 6 ( [0,0,0,1,0,1,1,0] -> [0,0,0,1,1,0,0,0] )
+2) Flip from index 5 to 7 ( [0,0,0,1,1,0,0,0] -> [0,0,0,1,1,1,1,1] )
+3) Flip from index 0 to 2 ( [0,0,0,1,1,0,0,0] -> [1,1,1,1,1,1,1,1] )
+You can have a list composed by all ones. Given that it’s impossible to turn the list so
+that it contains all zeros, your output should be “3”.
+2) If the test case is
+‘0101 4’
+there is no solution.
+Your output should be “NOT POSSIBLE”
+3) If the test case is
+‘1111111111 5’
+You can have all ones with 0 moves, and all zeros with 2 moves. Given that 0 < 2, your
+output should be 0.
+Bonus point:
+Run your solution also on the cases in ‘files/ex3bis.txt’ and provide us with your output in a file
+named ‘ex3bis.out’.
+
+
+Exercise 5:
+Consider the program ‘files/Tamagotchi.py’. Describe what process you would adopt to refactor
+that code, what you would change and what you would improve (but you don’t have to implement
+anything in this case).
+There is a huge conceptual mistake in the code that can crash the program sometimes. Find it,
+describe a possible solution and implement it.
